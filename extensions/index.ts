@@ -122,4 +122,18 @@ export default function piProject(pi: ExtensionAPI) {
 			return { content: [{ type: "text" as const, text: r }] };
 		},
 	});
+	pi.registerTool({
+		name: "project_mode",
+		label: "Project Mode",
+		description:
+			"Set a project's lifecycle mode: develop (full work) | readonly (observe/report only) | monitor (watch only) | paused (archived). Only نگار may change modes.",
+		parameters: Type.Object({
+			name: Type.String(),
+			mode: Type.String({ description: "develop|readonly|monitor|paused" }),
+		}),
+		async execute(_id, params) {
+			const r = await projectOp("mode", `${params.name}|${params.mode}`);
+			return { content: [{ type: "text" as const, text: r }] };
+		},
+	});
 }
