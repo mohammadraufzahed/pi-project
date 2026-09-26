@@ -72,7 +72,7 @@ export default function piProject(pi: ExtensionAPI) {
 		parameters: Type.Object({}),
 		async execute() {
 			const r = await projectOp("list", "");
-			return { content: [{ type: "text" as const, text: r }] };
+			return { content: [{ type: "text" as const, text: r }], details: null };
 		},
 	});
 
@@ -87,7 +87,7 @@ export default function piProject(pi: ExtensionAPI) {
 		}),
 		async execute(_id, params) {
 			const r = await projectOp("use", params.name);
-			return { content: [{ type: "text" as const, text: r }] };
+			return { content: [{ type: "text" as const, text: r }], details: null };
 		},
 	});
 
@@ -108,7 +108,7 @@ export default function piProject(pi: ExtensionAPI) {
 				"register",
 				`${params.name}|${params.dir}|${params.repo ?? ""}|${params.topic_id ?? ""}`,
 			);
-			return { content: [{ type: "text" as const, text: r }] };
+			return { content: [{ type: "text" as const, text: r }], details: null };
 		},
 	});
 
@@ -119,7 +119,7 @@ export default function piProject(pi: ExtensionAPI) {
 		parameters: Type.Object({ name: Type.String() }),
 		async execute(_id, params) {
 			const r = await projectOp("forget", params.name);
-			return { content: [{ type: "text" as const, text: r }] };
+			return { content: [{ type: "text" as const, text: r }], details: null };
 		},
 	});
 	pi.registerTool({
@@ -133,7 +133,7 @@ export default function piProject(pi: ExtensionAPI) {
 		}),
 		async execute(_id, params) {
 			const r = await projectOp("mode", `${params.name}|${params.mode}`);
-			return { content: [{ type: "text" as const, text: r }] };
+			return { content: [{ type: "text" as const, text: r }], details: null };
 		},
 	});
 }

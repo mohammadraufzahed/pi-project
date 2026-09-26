@@ -1,1 +1,27 @@
-{"name":"pi-project","version":"1.0.0","description":"Pi extension: project registry — souls resolve dirs/repos/topics per project (multi-project teams).","keywords":["pi-package","pi-extension","projects"],"license":"MIT","repository":"mohammadraufzahed/pi-project","pi":{"extensions":["./extensions/index.ts"]},"peerDependencies":{"@earendil-works/pi-coding-agent":"*","typebox":"*"}}
+{
+	"name": "pi-project",
+	"version": "1.0.0",
+	"description": "Pi extension: project registry \u2014 souls resolve dirs/repos/topics per project (multi-project teams).",
+	"keywords": [
+		"pi-package",
+		"pi-extension",
+		"projects"
+	],
+	"license": "MIT",
+	"repository": "mohammadraufzahed/pi-project",
+	"pi": {
+		"extensions": [
+			"./extensions/index.ts"
+		]
+	},
+	"peerDependencies": {
+		"@earendil-works/pi-coding-agent": "*",
+		"typebox": "*"
+	},
+	"devDependencies": {
+		"@earendil-works/pi-coding-agent": "^0.87.1",
+		"@types/node": "^26.6.3",
+		"typebox": "^1.3.4",
+		"typescript": "^7.0.2"
+	}
+}
